@@ -20,8 +20,9 @@ namespace dotnetapiapp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Application>>> GetAllApplications()
         {
-            var applications = await _context.Applications.ToListAsync();
-            return Ok(applications);
+            // var applications = await _context.Applications.ToListAsync();
+            // return Ok(applications);
+            return null;
         }
 
         [HttpPost]
@@ -38,13 +39,14 @@ namespace dotnetapiapp.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteApplication(int id)
         {
-            if (id <= 0)
-                return BadRequest("Not a valid Application id");
+            // if (id <= 0)
+            //     return BadRequest("Not a valid Application id");
 
-            var application = await _context.Applications.FindAsync(id);
-              _context.Applications.Remove(application);
-                await _context.SaveChangesAsync();
-            return NoContent();
+            // var application = await _context.Applications.FindAsync(id);
+            //   _context.Applications.Remove(application);
+            //     await _context.SaveChangesAsync();
+            // return NoContent();
+             return null;
         }
     }
 }

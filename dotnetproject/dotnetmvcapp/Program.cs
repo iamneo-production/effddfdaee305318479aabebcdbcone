@@ -1,8 +1,12 @@
+using dotnetmvcapp.Models;
+using dotnetmvcapp.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddTransient<IJobService, JobService>();
+builder.Services.AddTransient<IApplicationService, ApplicationService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
