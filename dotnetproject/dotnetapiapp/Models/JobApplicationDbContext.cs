@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookStoreDBFirst.Models;
+namespace dotnetapiapp.Models;
 
 public class JobApplicationDbContext : DbContext
 {

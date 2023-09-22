@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BookStoreDBFirst.Models;
+namespace dotnetapiapp.Models;
 public class Job
 {
     public int JobID { get; set; }

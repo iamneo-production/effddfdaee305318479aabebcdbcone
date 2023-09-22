@@ -1,0 +1,56 @@
+@model BookStoreApp.Models.Application
+
+@{
+    ViewData["Title"] = "Add Application";
+}
+
+<h2>Application Form</h2>
+
+<form asp-controller="Application" asp-action="AddApplication" method="post">
+    <div class="form-group">
+        <label for="ApplicationName">Application Name</label>
+        <input type="text" class="form-control" id="ApplicationName" name="ApplicationName" placeholder="Enter Application name" required>
+    </div>
+    <div class="form-group">
+        <label for="ContactNumber">Contact Number</label>
+        <input type="text" class="form-control" id="ContactNumber" name="ContactNumber" placeholder="Enter Contact Number" required>
+    </div>
+    <div class="form-group">
+        <label for="MailID">Mail ID</label>
+        <input type="text" class="form-control" id="MailID" name="MailID" placeholder="Enter MailID" required>
+    </div>
+    <div class="form-group">
+    <label for="JobTitle">Job Title</label>
+    <select class="form-control" id="JobTitle" name="JobTitle" required>
+        <option value="">Select Job Title</option>
+    </select>
+</div>
+    <button type="submit" class="btn btn-primary">Add Application</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Define a function to fetch job titles and populate the dropdown
+        function populateJobTitles() {
+            $.ajax({
+                url: 'https://localhost:7266/api/Job/JobTitle', // Replace with the actual URL of your Web API endpoint
+                method: 'GET',
+                success: function (data) {
+                    var dropdown = $('#JobTitle');
+                    dropdown.empty();
+                    dropdown.append($('<option>').val('').text('Select Job Title'));
+                    $.each(data, function (key, entry) {
+                        dropdown.append($('<option>').val(entry).text(entry));
+                    });
+                },
+                error: function () {
+                    console.error('Error fetching job titles from the API.');
+                }
+            });
+        }
+
+        // Call the function to populate the dropdown when the page loads
+        populateJobTitles();
+    });
+</script>

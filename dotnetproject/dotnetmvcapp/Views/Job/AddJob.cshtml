@@ -1,0 +1,35 @@
+@model BookStoreApp.Models.Job
+
+@{
+    ViewData["Title"] = "Add Job";
+}
+
+<h2>Add Job Opening Details</h2>
+
+<form asp-controller="Job" asp-action="AddJob" method="post">
+    <div class="form-group">
+        <label for="JobTitle">Job Title</label>
+        <input type="text" class="form-control" id="JobTitle" name="JobTitle" placeholder="Enter Job Title" required>
+    </div>
+    <div class="form-group">
+        <label for="Department">Department</label>
+        <input type="text" class="form-control" id="Department" name="Department" placeholder="Enter Department" required>
+    </div>
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" class="form-control" id="Location" name="Location" placeholder="Enter Location" required>
+    </div>
+     <div class="form-group">
+        <label for="Responsibility">Responsibility</label>
+        <input type="text" class="form-control" id="Responsibility" name="Responsibility" placeholder="Enter Responsibility" required>
+    </div>
+     <div class="form-group">
+        <label for="Qualification">Qualification</label>
+        <input type="text" class="form-control" id="Qualification" name="Qualification" placeholder="Enter Qualification" required>
+    </div>
+     <div class="form-group">
+        <label for="DeadLine">Due Date</label>
+        <input type="date" class="form-control" id="DeadLine" name="DeadLine" placeholder="Enter Due Date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Job</button>
+</form>

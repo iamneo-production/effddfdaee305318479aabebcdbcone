@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BookStoreDBFirst.Models;
+using dotnetapiapp.Models;
 
-namespace BookStoreDBFirst.Controllers
+namespace dotnetapiapp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

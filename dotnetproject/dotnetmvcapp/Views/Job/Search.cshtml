@@ -1,0 +1,40 @@
+@model IEnumerable<BookStoreApp.Models.Song>
+
+<form asp-action="Search" method="get">
+    <div class="form-group">
+        <label for="id">Song ID:</label>
+        <input type="text" class="form-control" id="id" name="id" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<h1>Search Results</h1>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Song Id</th>
+                <th>Song Name</th>
+                <th>Release Year</th>
+                <th>Singer Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var song in Model)
+            {
+                <tr>
+                    <td>@song.SongID</td>
+                    <td>@song.SongName</td>
+                    <td>@song.ReleaseYear</td>
+                    <td>@song.SingerName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No matching Song found.</p>
+}
